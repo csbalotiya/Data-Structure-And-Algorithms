@@ -1,4 +1,6 @@
-/* Dynamic Programming C++ implementation of LCS problem */
+/* Dynamic Programming C++ implementation of LCS problem 
+
+complexity is O[n*m]   */
 #include<bits/stdc++.h>
 using namespace std;
 int lcs( string X, string Y, int m, int n ){
