@@ -4,6 +4,24 @@ Problem:	1520D - Same Differences
 
 link : https://codeforces.com/problemset/problem/1520/D
 
+You are given an array a of n integers. Count the number of pairs of indices (i,j) such that i<j and aj−ai=j−i.
+
+input
+4
+6
+3 5 1 4 6 6
+3
+1 2 3
+4
+1 3 3 4
+6
+1 6 3 4 5 6
+
+output
+1
+3
+3
+10
 */
 
 //Time complexity O[N] 
