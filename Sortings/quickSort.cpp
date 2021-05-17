@@ -1,3 +1,10 @@
+/*
+Quick sort is based on divide-and-conquer. 
+The average time complexity of this algorithm is O(n*log(n)) but
+the worst case complexity is O(n^2). {The worst case happens when array is already sorted either in ascending or descending order.}
+To reduce the chances of the worst case here Quicksort is implemented using randomization.
+*/
+
 #include<iostream>
 using namespace std;
 int partition (int arr[], int low, int high){
@@ -13,7 +20,7 @@ int partition (int arr[], int low, int high){
 	return (i + 1);
 }
 void quickSort(int arr[], int low, int high){
-	if (low < high){
+	if (low < high){				// n element * divide and conquer take log(n) = nlog(n)
 		int pi = partition(arr, low, high);
 		quickSort(arr, low, pi - 1);
 		quickSort(arr, pi + 1, high);
