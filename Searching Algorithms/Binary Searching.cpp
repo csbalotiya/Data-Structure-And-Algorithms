@@ -7,19 +7,19 @@
 
 #include<iostream>
 using namespace std;
-
+// Here Binary Search is apply on Increasing sorted Array
 
 int bsearch(int a [],int l,int h,int x){
         int mid = (l + h)/2;
-        if (x == a[mid])
+        if (x == a[mid])    // element found
             return mid;
-        else if(x > a[mid]){
+        else if(x > a[mid]){      // if element is big check in next half part
             return bsearch(a,mid+1,h,x);
-        }else if(x < a[mid]){
+        }else if(x < a[mid]){    // if element is small check in previous half part
             return bsearch(a,l,mid-1,x);
         }
         else
-            return -1;
+            return -1;   // Element not Found
 }
 int main(){
         int a [] = {3,15,17,29,56,98,100};
