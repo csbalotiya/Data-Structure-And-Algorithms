@@ -1,3 +1,9 @@
+/*
+The complexity of linear search is therefore O(n). 
+
+If the element to be searched lived on the the first memory block then the complexity would be: O(1).
+*/
+
 #include<iostream>
 using namespace std;
 
