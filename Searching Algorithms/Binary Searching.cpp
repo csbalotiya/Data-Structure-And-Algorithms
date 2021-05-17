@@ -1,4 +1,10 @@
 
+/* Complexity O[Log(n)]
+
+ best-case time complexity would be O(1) when the central index would directly match the desired value. 
+ The worst-case scenario could be the values at either extremity of the list or values not in the Array.*/
+
+
 #include<iostream>
 using namespace std;
 
@@ -25,4 +31,4 @@ int main(){
 }
 
 
-///+ This code is written by CS Balotiya...
+// Thank you
