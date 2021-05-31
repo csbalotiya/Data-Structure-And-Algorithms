@@ -50,8 +50,8 @@ int clearBit(int n, int pos){
   ~(1<<2)=>  1011
     1 << pos give a binary number where pos val is 1, other are 0
 
-    0101 % 1011 => 0001 (1)
-    make and(|) opertator with ~(1<<pos) answer without changing other bit return answer
+    0101 & 1011 => 0001 (1)
+    make and(&) opertator with ~(1<<pos) answer without changing other bit return answer
 */
 
 int updateBit(int n, int pos, int value){
