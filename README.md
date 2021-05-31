@@ -1,5 +1,8 @@
 # Data-Structure-And-Algorithms
 Data structures and Algorithms allow us to write efficient and optimized computer programs.
+- Mathematical and Logical represetation of data is called Data Structure.
+- An algorithm is a finite sequence of well-defined, computer-implementable instructions.
+
 
 ![image](https://user-images.githubusercontent.com/74857569/120197149-4d905e80-c23e-11eb-86a4-fcf9be47e336.png)
 
