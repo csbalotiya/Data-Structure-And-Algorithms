@@ -20,30 +20,31 @@ A data structure is a particular way of organizing and storing data in a compute
 # Algorithms
 An algorithm is an unambiguous specification of how to solve a class of problems. It is a set of rules that precisely define a sequence of operations.
 
-Algorithms by Topic
+ Algorithms by Topic
  Bit Manipulation - 
-StringsSorting
-Linked Lists
-Trees
-Graphs
+ StringsSorting
+ Linked Lists
+ Trees
+ Graphs
+
+
 Uncategorized
-   -Tower of Hanoi
-  -Square Matrix Rotation - in-place algorithm
-  - Jump Game - backtracking, dynamic programming (top-down + bottom-up) and greedy examples
-  - Unique Paths - backtracking, dynamic programming and Pascal's Triangle based examples
-  - Rain Terraces - trapping rain water problem (dynamic programming and brute force versions)
-  - Recursive Staircase - count the number of ways to reach to the top 
-  - Best Time To Buy Sell Stocks - divide and conquer and one-pass examples
+  - Tower of Hanoi
+  - Square Matrix Rotation
+  -  Jump Game
+  - Unique Paths 
+  - Recursive Staircase 
+  - Best Time To Buy Sell Stocks 
   - N-Queens Problem
 
 
 # Algorithms by Paradigm
- Brute Force
- Greedy
- Divide and Conquer
- Dynamic Programming
- Backtracking
- Branch & Bound
+ - Brute Force
+ - Greedy
+ - Divide and Conquer
+ - Dynamic Programming
+ - Backtracking
+ - Branch & Bound
  
  ![image](https://user-images.githubusercontent.com/74857569/120195743-bf67a880-c23c-11eb-8af8-1db8c0db9868.png)
 
