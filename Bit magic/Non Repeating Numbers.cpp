@@ -11,7 +11,7 @@ int solve(vector<int> & nums){
     for(int i = 1; i < n; i++){
         ans ^= nums[i];
     }
-    int temp = ans & ~(ans - 1);
+    int temp = ans & ~(ans - 1);   // Hint
 
     int x = 0, y = 0;
     for(int i = 0; i < n; i++){
