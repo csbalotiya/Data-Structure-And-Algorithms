@@ -1,6 +1,7 @@
 //https://practice.geeksforgeeks.org/problems/relative-sorting4323/1#
 // Example of map , map is always sorted according the key.
 
+// C++ Solution :
 class Solution{
     public:
     vector<int> sortA1ByA2(vector<int> A1, int n, vector<int> A2, int m) {
@@ -33,3 +34,31 @@ class Solution{
         return v;
     } 
 };
+
+
+
+// Python Solution :
+class Solution:
+ 
+    def relativeSort (self,A1, N, A2, M):
+        frequency = {}
+        for item in A1:
+           if item in frequency:
+              frequency[item] += 1
+           else:
+              frequency[item] = 1
+
+        res = []
+        for  i in A2:
+            c = frequency[i]
+            while(c!= 0):
+                res.append(i)
+                c -= 1
+        
+        A1.sort()
+        for i in A1:
+            if i not in A2:
+                res.append(i)
+                
+        return res
+        
