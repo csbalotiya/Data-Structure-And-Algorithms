@@ -35,3 +35,28 @@ public:
         return ans;
     }
 };
+
+/*
+class Solution {
+public:
+    vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        
+        int n = nums.size();
+        set<vector<int>>  res;
+        for(int i = 0; i < (1<<n); i++){
+            vector<int> ans;
+            for(int bit =0; bit < n; bit++){
+                if(i&(1<<bit)){
+                    ans.push_back(nums[bit]);
+                }
+            }
+            sort(ans.begin(), ans.end());
+            res.insert(ans);
+        }
+        
+        vector<vector<int>> r(res.begin(), res.end());
+
+        return r;
+    }
+};
+*/
