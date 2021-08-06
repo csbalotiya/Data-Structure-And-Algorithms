@@ -9,6 +9,8 @@ Example 1:
 Input: root = [1,null,3,2,4,null,5,6]
 Output: [1,3,5,6,2,4]
 */
+
+//Recursion
 class Solution {
 public:
     void order(Node* root,vector<int>& result) {
@@ -23,3 +25,23 @@ public:
         return v;
     }    
 };
+
+//Iterative Solution:
+
+vector<int> preorder(Node* root) {
+        vector<int> ans;
+        if(root==NULL)
+            return ans;
+        stack<Node *> stk;
+        stk.push(root);
+        
+        while(!stk.empty()){
+            Node *curr=stk.top();
+            stk.pop();
+            ans.push_back(curr->val);
+            for(int i=curr->children.size()-1;i>=0;i--){
+                stk.push(curr->children[i]);
+            }
+        }
+        return ans;
+    }
