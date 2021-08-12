@@ -39,3 +39,22 @@ public:
         return sol;
     }
 };
+
+
+//https://practice.geeksforgeeks.org/problems/print-anagrams-together/1#
+class Solution{
+  public:
+    vector<vector<string> > Anagrams(vector<string>& list) {
+        vector<vector<string> > ans;
+        unordered_map<string, vector<string>> mp;
+        for(int i = 0; i < list.size(); i++){
+            string temp = list[i];
+            sort(temp.begin(), temp.end());
+            mp[temp].push_back(list[i]);
+        }
+        for(auto x: mp)
+            ans.push_back(x.second);
+            
+        return ans;
+    }
+};
