@@ -1,0 +1,73 @@
+//https://practice.geeksforgeeks.org/problems/diagonal-morning-assembly0028/1/#
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    void helper(vector<vector<int> >& matrix, int r, int c, string str){
+        
+        int n = matrix.size(), m = matrix[0].size();
+        vector<int> v;
+        for(int i = r, j = c; i < n && j < m; i++, j++){
+            v.push_back(matrix[i][j]);
+        }
+        if(str == "top"){
+            sort(v.rbegin(), v.rend());
+        }else if(str == "bottom"){
+            sort(v.begin(), v.end());
+        }
+        int k = 0;
+        while(r < n && c < m){
+            matrix[r++][c++] = v[k++];
+        }
+    }
+  
+    void diagonalSort(vector<vector<int> >& matrix, int n, int m) {
+        
+        for(int i = 1; i < m; i++){
+            helper(matrix, 0 , i, "top");
+        }
+        for(int j = 1; j < n; j++){
+            helper(matrix, j , 0, "bottom");
+        }
+    }
+};
+
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n, m;
+        cin>>n>>m;
+
+        int inputline2[n*m];
+        for (int i = 0; i < n*m; ++i)
+            cin>> inputline2[i];
+        vector<vector<int> > matrix( n , vector<int> (m, 0));
+
+        for(int i=0; i<n; i++) {
+            for (int j = 0; j < m; ++j) {
+                matrix[i][j] = inputline2[i * m + j]; 
+            }
+        }
+        
+        Solution ob;
+        ob.diagonalSort(matrix, n, m);
+
+        // print the modified matrix
+        for (int i = 0; i < n; i++) { 
+            for (int j = 0; j < m; j++) { 
+                cout << matrix[i][j] << " "; 
+            } 
+            cout << endl; 
+        }    
+    }
+    return 0;
+}
+
+  // } Driver Code Ends
