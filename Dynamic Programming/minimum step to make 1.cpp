@@ -26,7 +26,7 @@ int main(){
         int q3 = inf;
 
         if(i % 3 == 0) q1= 1+ dp[i/3];
-        if(i % 3 == 0) q2= 1+ dp[i/2];
+        if(i % 2 == 0) q2= 1+ dp[i/2];
         q3= 1+ dp[i-1];
 
         dp[i] = min(q1,min(q2,q3));
