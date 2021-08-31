@@ -91,3 +91,14 @@ int main(){
 	g.bfs(1);
 
 }
+/*
+Output : 
+BFS Traversal is :
+1 2 3 4 5 6
+
+Dist of 1 from 1 is 0
+Dist of 2 from 1 is 1
+Dist of 3 from 1 is 1
+Dist of 4 from 1 is 2
+Dist of 5 from 1 is 2
+Dist of 6 from 1 is 3*/
