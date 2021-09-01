@@ -1,0 +1,19 @@
+//https://www.interviewbit.com/old/problems/counting-subarrays/
+
+int Solution::solve(vector<int> &A, int B) {
+    
+    int ans = 0, n = A.size();
+    
+    int i = 0,l = 0,r = 0, sum = 0;
+    while(i < n && l < n){
+        if(sum + A[i] < B){
+            sum += A[i];
+            ans += i-l+1;
+            i++;
+        }else{
+            sum -= A[l];
+            l++;
+        }
+    }
+    return ans;
+}
