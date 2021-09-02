@@ -13,26 +13,24 @@ Eg4: make sunday -> saturday {cost = 3, replace('n','r')+ insertion('a') + inser
 const int inf = (int)1e9;
 using namespace std;
 int dp[100][100] ;
-int converterRecursive(string c, string s, int i, int j){
-    if(i == c.length()+1 || j == s.length()+1){
-        return 0;
-    }
-    if(c[i] == s[j]){
-        return converterRecursive(c, s, i+1, j+1);
-    }
-    else{
 
-         int q1 = converterRecursive(c, s, i+1, j+1);  // replacement
-
-         int q2 = converterRecursive(c, s, i, j+1);   //insertion
-
-         int q3= converterRecursive(c, s, i+1 ,j);   //deletion
-
-         return  1 + min(q1, min(q2,q3));
-    }
+int converterRecursive(string A, string B, int i, int j){
+    if(i == A.size())   return B.size()-j;
+    if(j == B.size())   return A.size()-i;
+    if(dp[i][j] != -1)
+        return dp[i][j];
+    if(A[i] == B[j])
+        return dp[i][j] = fun(A,B,i+1,j+1);
+    
+    int p = fun(A,B,i+1,j);  //insertion
+    int q = fun(A,B,i,j+1);   //deletion
+    int r = fun(A,B,i+1,j+1);  //replacce
+    
+    return dp[i][j] = 1+min(p, min(q,r));
 }
 
 
+// Tabular
 int converterDP(string c, string s){
     int m = c.length();
     int n = s.length();
