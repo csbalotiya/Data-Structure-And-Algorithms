@@ -38,22 +38,26 @@ int converterDP(string c, string s){
     int n = s.length();
     int dp[m+1][n+1] = {{}};
     dp[0][0] = 0;
-    for(int i = 1 ; i <= m; i++){ // elements are inserted fromempty string
-        dp[0][i] = 1 +dp[0][i-1];
-    }
-    for(int i = 1 ; i <= n; i++){ // elements are deleted for making empty
-        dp[i][0] = 1 + dp[i-1][0];
-    }
+   
+    for(int i = 0; i <= m; i++){
+        for(int j = 0; j <= n; j++){
+	    if(i==0){
+                dp[i][j] = j;
+            }
+            else if(j==0){
+                dp[i][j] = i;
+            }
+            else if(A[i-1]==B[j-1]){
+                dp[i][j]= dp[i-1][j-1];
+            }
+	    else{
+		    int q1 =  dp[i-1][j-1]; //replacement
+		    int q2 =  dp[i-1][j]; //deletion
+		    int q3 =  dp[i][j-1]; //insertion
 
-    for(int i = 1; i <= m; i++){
-        for(int j = 1; j <= n; j++){
-
-            int q1 =  dp[i-1][j-1]; //replacement
-            int q2 =  dp[i-1][j]; //deletion
-            int q3 =  dp[i][j-1]; //insertion
-
-            dp[i][j] = min(q1, min(q2, q3)) + (c[i] != s[j]);
-        }
+		    dp[i][j] = min(q1, min(q2, q3)) + (c[i] != s[j]);
+	    }
+	}
     }
     return dp[m][n];
 }
