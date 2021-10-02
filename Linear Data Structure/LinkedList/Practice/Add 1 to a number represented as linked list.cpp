@@ -1,67 +1,42 @@
-/*
-linked List data is :-- 1 9 9 9 
-                            + 1 
-linked List data is :-- 2 0 0 0 */
-#include <iostream>
+/*linked List data is :-- 1 9 9 9 
+                              + 1 
+  linked List data is :-- 2 0 0 0 */
+#include <bits/stdc++.h>
 using namespace std;
-
-struct node{
-  int data;
-  struct node *next;
-  node(int val){
-      data = val;
-      next = nullptr;
-  }
+struct Node{
+    int data;
+    struct Node *next;
+    Node(int val){
+        this->data = val;
+        this->next = NULL;
+    }
 };
-void print(struct node *head){
-    cout<<"\nlinked List data is :-- ";
-    struct node *curr = head;
-    while(curr != NULL){
-        cout<<curr->data<<" ";
-        curr = curr->next;
+void print(Node *head){
+    while(head != NULL){
+        cout<<head->data<<"";
+        head = head->next;
     }cout<<"\n";
 }
-
-node* reverse(struct node *head){
-  
-   struct node *curr = head, *next =NULL, *prev = NULL;
-   while(curr != NULL){
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-   }
-   return prev;
+Node* addOne(Node *head){
+    if(head->next == NULL){
+        head->data += 1;
+        return head;
+    }
+    Node* sum = addOne(head->next);
+    head->data = head->data + (sum->data / 10);
+    sum->data = sum->data % 10;
+    return head;
 }
-
-
-void add1(struct node *root){
-   struct node* head = reverse(root);
-   int carry = 0;
-   struct node *curr = head;
-   curr->data += 1;
-   while(curr != NULL){
-       curr->data += carry;
-       if(curr->data >= 10){
-           carry = curr->data/10;
-           curr->data = curr->data%10;
-       }
-       curr = curr->next;
-   }
-   struct node *res = reverse(head);
-   cout<<"After Addding 1 ";
-   print(res);
-}
-
-
 int main(){
-    
-    struct node *start = new node(1);
-    struct node *cur = start;
-    cur->next = new node(9);
-    cur->next->next = new node(9);
-    cur->next->next->next = new node(9);
-    print(cur);
-    add1(cur);
-    
+
+  vector<int> arr = {1,2,3,9,9};
+  struct Node* head = new Node(arr[0]);
+	struct Node* temp = head;
+	for(int i = 1; i < arr.size(); i++){
+        temp->next = new Node(arr[i]);
+        temp = temp->next;
+	}
+	print(head);
+  cout<<"\nLL After Adding 1 : ";
+  print(addOne(head));
 }
