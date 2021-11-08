@@ -34,6 +34,35 @@ void del(struct node *head, int p){
 }
 
 
+
+
+
+
+
+
+/*
+
+
+Node *deleteNodeRec(Node *head, int pos) {
+	//Write your code here
+    if(head == NULL){
+        if(pos == 0){
+            return head == NULL ? NULL : head->next;
+        }
+        return head;
+    }
+    if(pos == 0){
+        //head->next = head->next->next;
+      //  free(head->next);
+        return head->next;
+    }
+    head->next = deleteNodeRec(head->next,pos-1);
+    return head;
+}
+
+*/
+
+
 int main(){
     
     struct node *start = new node(1);
