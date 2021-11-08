@@ -60,3 +60,23 @@ int main(){
 	ll.print();
 	return 0;
 }
+
+/*  RECURSIVE Approch
+
+void reverse(Node* curr, Node* prev, Node* &headRef){
+    if (curr == nullptr){
+        headRef = prev;
+        return;
+    }
+    reverse(curr->next, curr, headRef);
+    curr->next = prev;
+}
+
+Node *reverseLinkedListRec(Node *head){
+    
+    reverse(head, NULL,head);
+    return head;   
+}
+
+
+*/
