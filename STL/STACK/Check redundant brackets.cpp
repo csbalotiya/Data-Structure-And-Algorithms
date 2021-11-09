@@ -1,3 +1,12 @@
+/*
+Example:
+Expression: (a+b)+c
+Since there are no needless brackets, hence, the output must be 'false'.
+
+Expression: ((a+b))
+The expression can be reduced to (a+b). Hence the expression has redundant brackets and the output will be 'true'.
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
