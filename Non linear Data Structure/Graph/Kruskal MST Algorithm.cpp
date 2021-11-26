@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// Kruskal Algorithm
+// Kruskal Algorithm       complexity :   Elog(V) + Elog(E)
 
 const int N = 1e5+6;
 int n,m;   // n-> Vertex, m-> Edges
