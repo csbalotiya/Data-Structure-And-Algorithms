@@ -18,7 +18,7 @@ int maxSubarraySum(int arr[], int n){
     
     // Your code here
     int tillnow = arr[0];
-    for (int i = 1;i<n;i++){ 
+    for (int i = 1;i < n; i++){ 
         arr[i] = max(arr[i], arr[i-1]+arr[i]);
         tillnow = max(tillnow, arr[i]);
     }
@@ -30,20 +30,12 @@ int maxSubarraySum(int arr[], int n){
 
 int main()
 {
-    int t,n;
-    
-    cin>>t; //input testcases
-    while(t--) //while testcases exist
-    {
-        
-        cin>>n; //input size of array
-        
+       
+        cin>>n; //input size of array      
         int a[n];
-        
         for(int i=0;i<n;i++)
             cin>>a[i]; //inputting elements of array
         
         cout << maxSubarraySum(a, n) << endl;
-    }
 }
-  // } Driver Code Ends
+
